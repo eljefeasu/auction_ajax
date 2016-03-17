@@ -1,0 +1,2 @@
+$("input[type=text]").first().val("<%= @item.highest_bid_amount %>").prop("disabled", true);
+$("input[type=text]").last().val("<%= @item.highest_bid_amount + 10 %>");

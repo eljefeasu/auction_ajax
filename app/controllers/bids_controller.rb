@@ -2,10 +2,9 @@ class BidsController < ApplicationController
 
   def create
     @bid = Bid.new(bid_params)
+    @item = @bid.item
 
-    if @bid.save
-      redirect_to @bid.item, notice: 'Your bid has been recorded!'
-    else
+    unless @bid.save
       @item = @bid.item
       render "items/show"
     end
