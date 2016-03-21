@@ -17,3 +17,10 @@
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+
+$(document).ready(function() {
+    // get data every 15 seconds and refresh myDiv
+    var refreshId = setInterval(function() {
+        $("#highest-amount").load(location.href + " #highest-amount");
+    }, 15000);
+});
